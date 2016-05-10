@@ -12,6 +12,7 @@ resource "aws_launch_configuration" "ecs" {
   security_groups      = ["${aws_security_group.ecs.id}"]
   iam_instance_profile = "${aws_iam_instance_profile.ecs.name}"
   user_data            = "#!/bin/bash\necho ECS_CLUSTER=${aws_ecs_cluster.default.name} > /etc/ecs/ecs.config"
+  associate_public_ip_address  = true
 }
 
 /**
@@ -19,7 +20,7 @@ resource "aws_launch_configuration" "ecs" {
  */
 resource "aws_autoscaling_group" "ecs" {
   name                 = "ecs-asg"
-  availability_zones   = ["${split(",", var.availability_zones)}"]
+  vpc_zone_identifier  = ["${split(",", var.vpc_subnet_ids)}"]
   launch_configuration = "${aws_launch_configuration.ecs.name}"
   /* @todo - variablize */
   min_size             = 1

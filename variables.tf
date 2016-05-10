@@ -11,9 +11,9 @@ variable "region" {
   default = "eu-west-1"
 }
 
-variable "availability_zones" {
-  description = "The availability zones"
-  default = "eu-west-1a,eu-west-1b,eu-west-1c"
+variable "vpc_subnet_ids" {
+  description = "Set of VPC Subnets that the ECS autoscaling group may launch new ECS nodes in."
+  default = ""
 }
 
 variable "ecs_cluster_name" {
@@ -41,4 +41,8 @@ variable "instance_type" {
 
 variable "ec2_key_pair_name" {
   description = "Name of the aws ssh key pair on the ECS cluster instances"
+}
+
+variable "vpc_id" {
+  description = "ID of the VPC where ECS instances will reside"
 }
