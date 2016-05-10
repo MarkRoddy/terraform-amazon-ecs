@@ -8,19 +8,18 @@ variable "aws_secret_key" {
 
 variable "region" {
   description = "The AWS region to create resources in."
-  default = "eu-west-1"
+  default     = "eu-west-1"
 }
 
 variable "vpc_subnet_ids" {
   description = "Set of VPC Subnets that the ECS autoscaling group may launch new ECS nodes in."
-  default = ""
+  default     = ""
 }
 
 variable "ecs_cluster_name" {
   description = "The name of the Amazon ECS cluster."
-  default = "default"
+  default     = "default"
 }
-
 
 /* ECS optimized AMIs per region */
 variable "amis" {
@@ -37,7 +36,6 @@ variable "amis" {
 variable "instance_type" {
   default = "t2.micro"
 }
-
 
 variable "ec2_key_pair_name" {
   description = "Name of the aws ssh key pair on the ECS cluster instances"
