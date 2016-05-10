@@ -7,7 +7,7 @@ resource "aws_iam_role" "ecs_role" {
 /* ecs service scheduler role */
 resource "aws_iam_role_policy" "ecs_service_role_policy" {
   name     = "ecs_service_role_policy"
-  policy   = "${template_file.ecs_service_role_policy.rendered}"
+  policy   = "${file("policies/ecs-service-role-policy.json")}"
   role     = "${aws_iam_role.ecs_role.id}"
 }
 
