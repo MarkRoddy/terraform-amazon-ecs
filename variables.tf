@@ -40,10 +40,8 @@ variable "instance_type" {
 
 variable "key_name" {
   description = "The aws ssh key name."
-  default = ""
 }
 
 variable "key_file" {
   description = "The ssh public key for using with the cloud provider."
-  default = ""
 }
