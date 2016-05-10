@@ -38,10 +38,7 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-variable "key_name" {
-  description = "The aws ssh key name."
-}
 
-variable "key_file" {
-  description = "The ssh public key for using with the cloud provider."
+variable "ec2_key_pair_name" {
+  description = "Name of the aws ssh key pair on the ECS cluster instances"
 }
