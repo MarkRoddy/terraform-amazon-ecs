@@ -59,3 +59,7 @@ variable "desired_num_instances" {
   description = "The desired number of instances in the ECS cluster's auto-scaling group"
   default     = 1
 }
+
+variable "security_group_ids" {
+  description = "Set of security groups ECS instances will be in when launched by auto-scaling group"
+}
