@@ -45,18 +45,17 @@ variable "vpc_id" {
   description = "ID of the VPC where ECS instances will reside"
 }
 
-
 variable "min_num_instances" {
   description = "The minimum number of instances in the ECS cluster's auto-scaling group"
-  default = 1
+  default     = 1
 }
 
 variable "max_num_instances" {
   description = "The maximum number of instances in the ECS cluster's auto-scaling group"
-  default = 10
+  default     = 10
 }
 
 variable "desired_num_instances" {
   description = "The desired number of instances in the ECS cluster's auto-scaling group"
-  default = 1
+  default     = 1
 }

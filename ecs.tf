@@ -23,8 +23,8 @@ resource "aws_autoscaling_group" "ecs" {
   vpc_zone_identifier  = ["${split(",", var.vpc_subnet_ids)}"]
   launch_configuration = "${aws_launch_configuration.ecs.name}"
 
-  min_size = "${var.min_num_instances}"
-  max_size = "${var.max_num_instances}"
+  min_size         = "${var.min_num_instances}"
+  max_size         = "${var.max_num_instances}"
   desired_capacity = "${var.desired_num_instances}"
 }
 
