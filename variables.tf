@@ -24,12 +24,15 @@ variable "ecs_cluster_name" {
 /* ECS optimized AMIs per region */
 variable "amis" {
   default = {
-    ap-northeast-1 = "ami-8aa61c8a"
-    ap-southeast-2 = "ami-5ddc9f67"
-    eu-west-1      = "ami-2aaef35d"
-    us-east-1      = "ami-b540eade"
-    us-west-1      = "ami-5721df13"
-    us-west-2      = "ami-cb584dfb"
+    /* amzn-ami-2016.03.b-amazon-ecs-optimized */
+    us-east-1      = "ami-a1fa1acc"
+    us-west-1      = "ami-68106908"
+    us-west-2      = "ami-a28476c2"
+    eu-west-1      = "ami-f66de585"
+    eu-central-1   = "ami-1c769473"
+    ap-northeast-1 = "ami-a98d97c7"
+    ap-southeast-1 = "ami-4b3ee928"
+    ap-southeast-2 = "ami-513c1032"
   }
 }
 
