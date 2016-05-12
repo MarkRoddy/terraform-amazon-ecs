@@ -8,9 +8,8 @@ resource "aws_launch_configuration" "ecs" {
   /* @todo - split out to a variable */
   instance_type               = "${var.instance_type}"
   key_name                    = "${var.ec2_key_pair_name}"
-  iam_instance_profile        = "${aws_iam_instance_profile.ecs.id}"
   security_groups             = ["${split(",", var.security_group_ids)}"]
-  iam_instance_profile        = "${aws_iam_instance_profile.ecs.name}"
+  iam_instance_profile        = "${aws_iam_instance_profile.TerraformedEcsInstanceRole.name}"
   user_data                   = "#!/bin/bash\necho ECS_CLUSTER=${aws_ecs_cluster.default.name} > /etc/ecs/ecs.config"
   associate_public_ip_address = true
 }
